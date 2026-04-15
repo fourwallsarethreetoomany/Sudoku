@@ -37,8 +37,10 @@ public class MyProgram {
     // Check row, column, and 3×3 box
     private static boolean check(int[][] board, int r, int c, int val) {
         for (int i = 0; i < big; i++) {
-            if (board[r][i] == val) return false;
-            if (board[i][c] == val) return false;
+            if (board[r][i] == val)
+            return false;
+            if (board[i][c] == val) 
+            return false;
         }
 
         int boxR = (r / 3) * 3;
