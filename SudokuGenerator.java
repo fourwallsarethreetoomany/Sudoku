@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class MyProgram {
+public class SudokuGenerator {
 
     private static final int big = 9; // size 9
     private static Random rand = new Random();
