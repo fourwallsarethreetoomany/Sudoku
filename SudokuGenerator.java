@@ -11,7 +11,7 @@ public class MyProgram {
         print(board);
     }
 
-    // Backtracking fill
+    // Backtracking fill 
     private static boolean fill(int[][] board) {
         for (int r = 0; r < big; r++) {
             for (int c = 0; c < big; c++) {
@@ -19,7 +19,7 @@ public class MyProgram {
                     int[] nums = randomOrder();
                     for (int n = 0; n < big; n++) {
                         int val = nums[n];
-                        if (safe(board, r, c, val)) {
+                        if (check(board, r, c, val)) {
                             board[r][c] = val;
                             if (fill(board)) {
                                 return true;
@@ -35,7 +35,7 @@ public class MyProgram {
     }
 
     // Check row, column, and 3×3 box
-    private static boolean safe(int[][] board, int r, int c, int val) {
+    private static boolean check(int[][] board, int r, int c, int val) {
         for (int i = 0; i < big; i++) {
             if (board[r][i] == val) return false;
             if (board[i][c] == val) return false;
@@ -63,7 +63,7 @@ public class MyProgram {
         return a;
     }
 
-    // Print board clearly
+    // Prints board with border thing
     private static void print(int[][] board) {
         for (int r = 0; r < big; r++) {
             if (r % 3 == 0) {
